@@ -1,0 +1,131 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Erstellungszeit: 05. Jan 2020 um 16:26
+-- Server-Version: 10.4.6-MariaDB
+-- PHP-Version: 7.3.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Datenbank: `loginphp`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `pwdreset`
+--
+
+CREATE TABLE `pwdreset` (
+  `pwdResetId` int(11) NOT NULL,
+  `pwdResetEmail` text NOT NULL,
+  `pwdResetSelector` text NOT NULL,
+  `pwdResetToken` longtext NOT NULL,
+  `pwdResetExpires` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `pwdreset`
+--
+
+INSERT INTO `pwdreset` (`pwdResetId`, `pwdResetEmail`, `pwdResetSelector`, `pwdResetToken`, `pwdResetExpires`) VALUES
+(3, 'ea', 'e1e350879dbb7028', '$2y$10$cUwrOiMRMvSIrfz1GERtY.D.lymKfd7NueiY7lEgxZcLUmULr02pS', '1572539397'),
+(6, 'test', '782f2dccfd3d7cc0', '$2y$10$wbwwLSM9zJmxeadHDCQi3eQ83lwofzJf1WzhC2cDbxjsSHBDn9D8m', '1572629337'),
+(7, 'asd', '3c8897513f896498', '$2y$10$m.7qklrbYcioNjYINAWniuAi4B9KPhVyQPg7Cz0mzfACioIllhSBG', '1572629342'),
+(8, 'teataw', '9b18dcd542815b46', '$2y$10$jU5b8B2bvn1hzVfDb7qusugWlhdo9qRUocIDLwjdZnLaNvcihCBcm', '1572629343'),
+(9, 'twat', '6cb55435f12399e9', '$2y$10$lAgcBCYoL7Ie2c.4MO74AOCDem3PS19uKxWI3EK.3Usi/.NqMPIXS', '1572629344'),
+(11, 'atwat', 'f644997688c63b3c', '$2y$10$DCCFrtAuFOPGEROcfTWE3.9.8on8BWotaEDIaifpsiWzkJtTRUyGC', '1572629346'),
+(83, 'a', '1795ce1a4ba91f13', '$2y$10$6jN3Qa8eGU2Cllfg0cfzvejNrOmEnBcN7sDIKeMMI.DC.7nJ0Dv8m', '1572629379'),
+(84, 'was', '025dabbc8d2a66fa', '$2y$10$H6b57M44Q4KHsOKIwrkDQelC2sri1XXEnhdSwTFVH3es2g.TUf0Ti', '1572629381'),
+(86, '', '8442437b8591dfe6', '$2y$10$cOUzm2Rzk6RL2v63T45GeuoyVqw3nyAZjZID66AdwbuccyaopZjcG', '1572629388'),
+(87, 'as', '3edd5e5b8385e87b', '$2y$10$v1cdSJTi0oyKRoWCfiX0/.Wk3lSOZ3zr8ydDiM/PJaUcrozJ.OXTy', '1572629611'),
+(88, 'schmeat@test.de', '2552a65cfff9358b', '$2y$10$0vWjlkES1vmI/YLyyhWNLOr65IkmUzDX/MKnv/27D6uUDznCXTtve', '1572629616'),
+(89, 'test@test.de', '7306703da84374fc', '$2y$10$E3UNECv2Ap61ppLcRz5ROOpEmO0yIKWhCVXbQ6EbXKQEvI3ZgBXN2', '1572629619'),
+(90, 't', 'b71bab52ac85e5bc', '$2y$10$i11Mdfa36V1o2gnie2IgjOqdX3xkIpql/nX1xFwJ0DK9b.uln.tIO', '1572629631');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `users`
+--
+
+CREATE TABLE `users` (
+  `idUsers` int(11) NOT NULL,
+  `uidUsers` tinytext NOT NULL,
+  `emailUsers` tinytext NOT NULL,
+  `pwdUsers` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `users`
+--
+
+INSERT INTO `users` (`idUsers`, `uidUsers`, `emailUsers`, `pwdUsers`) VALUES
+(3, 'test', 'test@test.de', '$2y$10$vhjPiBBtJRQ2WmwCXV8JO.mf5RpWS8b1GyiJshfFJtTwm5dvK592y'),
+(4, 'test1', 'test@test1.de', '$2y$10$PKnZKh8pVYzcVYXcH3t5ZeZZFqXyHqGiJrUyVx6H9bWZN3vCcuBGW'),
+(5, 't', 'test@test.to', '$2y$10$FgNXmo6ek/3PrII1buHE2ulSb5feW/oUM2NqhIWC6jIiP2LgV/vk6'),
+(6, 'test2', 'test2@test2.de', '$2y$10$c2Y9lE6VEDxVTU1xHb4Xyeyy6xP3K7cIl.3S6p59wGrNsc4ZEBsQO'),
+(7, 'a', 'a@a.com', '$2y$10$blKT6yBulqBg7QCniCSUTeagPl//4EChdm6kCeJg7LtMQfkykck32'),
+(8, 'te', 'te@te.de', '$2y$10$qjN26lFaaTlcS5EL5GZMV.fQRo0tBA7xFZg43qvj9VBAjTciUfADO'),
+(9, 'sd', 'sd@sd.de', '$2y$10$Cdf/uIW9JO/a71BmN3DthuT4kgwNBE7NsoQZwfimVktWqRV3It8zS'),
+(10, 'teeeeeeeee', 'tee@tee.de', '$2y$10$zWw0ToyiMju0VsLQr7fvP.0OpntB3dxrALH92BNP3I.NjnHS/3GvC'),
+(11, 'test1232131', 'testtesttest@test.de', '$2y$10$ABJzna8.m54CeJTWcbR.8uVag/4Gp1M1JwoSwG8RU4bw5GYO5fdy.'),
+(12, 'test123321123', 'test12345@tesest.de', '$2y$10$vb1AQZHRvnTDi9hd2etjQ.YIcQ3zr54LU5Cebwn8Oe/8IoGU.cWm2'),
+(13, 'testtestttt', 'test12345@test.de321', '$2y$10$PV/LOPAdrt98BFtK.D5DN.9dQ3ZkE3l35/j/okW1SYzoFhvVL2UHy'),
+(14, 'test12345ete', 'test12345@tteteest.de', '$2y$10$euZl4KwsF0RVvo8Cyjw/Ue3pPcdDgtv4gxhMV2jda0qoIdwluTSc.'),
+(15, 'test12345tetete', 'test12345@test.detete', '$2y$10$ME6aqRUkoChzdbQxT5lvouw0Xi1mzkHRTJUHU6rhgWL6HEEDqEY7W'),
+(16, 'test12345tetete5', 'test12345@test.detetee', '$2y$10$3xFq0OipqYEBy1JwT8ty3u7Ioq2f0upse6G5/OGw5X614dSk8P2rK'),
+(17, 'test21', 'test21@test21.de', '$2y$10$Jg7ZT4wQPxfHG4Ax26vRseYmgXbyR/7l1.aCq/B2LmuwH4TezmeQy'),
+(18, '123321', '123321@123321.de', '$2y$10$CyfkEjZAeEjl.iYi.O6H8.tQjQg3uDD2wyfRD9GcDwelJlki6An.m'),
+(19, 'test123456', 'aaa@aaa.de', '$2y$10$.XNHYBEjyutcXpM/jJPEKeqf8g5x4zKFzXGkppgsxkzNHvIi.L9JC'),
+(20, 'w', 'w@w.de', '$2y$10$xf44zZIpYEcLr8C61.7ku.0qJdOQD6iRObLvmB6dCAbYd1JHhOD9y'),
+(21, 'wawa', 'wa@w.de', '$2y$10$zFTcyuRU/lxXUq03gealKe20zf799Yvl5zswqwt1pgTV15itmmXiO');
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `pwdreset`
+--
+ALTER TABLE `pwdreset`
+  ADD PRIMARY KEY (`pwdResetId`);
+
+--
+-- Indizes für die Tabelle `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`idUsers`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `pwdreset`
+--
+ALTER TABLE `pwdreset`
+  MODIFY `pwdResetId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+
+--
+-- AUTO_INCREMENT für Tabelle `users`
+--
+ALTER TABLE `users`
+  MODIFY `idUsers` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
